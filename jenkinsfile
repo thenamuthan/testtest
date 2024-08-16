@@ -13,6 +13,7 @@ pipeline {
                 sh '''
                     ls -la
                     node --version
+                    npm install npm -g
                     npm --version
                     npm ci
                     chown -R 111:113 "/.npm"
