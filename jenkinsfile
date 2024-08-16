@@ -13,11 +13,8 @@ pipeline {
                 sh '''
                     ls -la
                     node --version
-                    npm --version
-                    npm cache clean --force
                     npm ci
-                    sudo chmod -R 777 /usr/local/lib/node_modules/
-                    npm install --package-lock-only
+                    sudo chown -R $(whoami) ~/.npm
                     npm run build
                 '''
             }
