@@ -13,6 +13,7 @@ pipeline {
                 sh '''
                     ls -la
                     node --version
+                    npm start
                     npm ci
                     mkdir ~/.npm-global
                     export NPM_CONFIG_PREFIX=~/.npm-global
