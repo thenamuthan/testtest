@@ -16,6 +16,7 @@ pipeline {
                     npm --version
                     npm cache clean --force
                     npm ci
+                    chown -R $USER /usr/local/
                     npm install --package-lock-only
                     npm run build
                 '''
