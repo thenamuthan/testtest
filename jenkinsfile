@@ -14,6 +14,9 @@ pipeline {
                     ls -la
                     node --version
                     npm ci
+                    mkdir ~/.npm-global
+                    export NPM_CONFIG_PREFIX=~/.npm-global
+                    export PATH=$PATH:~/.npm-global/bin
                     sudo chown -R $(whoami) ~/.npm
                     npm run build
                 '''
